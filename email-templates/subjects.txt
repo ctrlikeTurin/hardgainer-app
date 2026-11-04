@@ -1,0 +1,5 @@
+Confirm signup (confirm-signup.html):
+Confirm your email to start gaining with Hardgainer
+
+Reset password (reset-password.html):
+Reset your Hardgainer password
