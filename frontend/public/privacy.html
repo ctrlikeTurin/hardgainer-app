@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy &amp; Terms · Hardgainer</title>
+    <meta name="description" content="How Hardgainer handles your data, and the terms for using the app." />
+    <link rel="icon" href="/icon-192.png" />
+    <style>
+      :root {
+        --bg: #f4f6f3; --card: #fff; --line: #dde3d9; --text: #14201a; --muted: #5d6b62; --accent: #16a34a;
+        color-scheme: light; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root { --bg: #0b100d; --card: #151d18; --line: #26322a; --text: #e8f0ea; --muted: #91a197; --accent: #4ade80; color-scheme: dark; }
+      }
+      body { margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; }
+      main { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+      article { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 24px 20px; }
+      h1 { margin: 0 0 4px; font-size: 1.8rem; }
+      h2 { margin: 1.8rem 0 0.4rem; font-size: 1.15rem; }
+      p, li { color: var(--text); }
+      .muted { color: var(--muted); font-size: 0.9rem; }
+      a { color: var(--accent); }
+      ul { padding-left: 1.2rem; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p><a href="/">← Back to Hardgainer</a></p>
+      <article>
+        <h1>Privacy &amp; Terms</h1>
+        <p class="muted">Last updated 4 November 2026</p>
+
+        <h2>What Hardgainer stores</h2>
+        <ul>
+          <li><strong>Your account:</strong> email address and a securely hashed password, handled by Supabase.</li>
+          <li><strong>Your plan:</strong> age, sex, height, weight, target weight, activity level and training location, used to calculate your calories and workouts.</li>
+          <li><strong>Your logs:</strong> meal descriptions and their calorie and macro estimates, weekly weigh-ins, how workouts felt, and any notes you add.</li>
+        </ul>
+        <p>Meal photos are <strong>not stored</strong> by Hardgainer. They are sent for analysis and then discarded; only the estimate is saved.</p>
+
+        <h2>Who processes your data</h2>
+        <ul>
+          <li><strong>Cloudflare</strong> hosts the app and its database.</li>
+          <li><strong>Supabase</strong> manages sign-in and sends verification and password-reset emails.</li>
+          <li><strong>Google Gemini</strong> analyzes meal photos and descriptions, and suggests weekly workout progressions. Hardgainer uses Google's free tier, under which Google may use what is sent to it to improve its services. Don't include personal details in meal descriptions or check-in notes.</li>
+        </ul>
+        <p>Hardgainer has no ads, does not sell your data, and does not use tracking cookies.</p>
+
+        <h2>On your device</h2>
+        <p>Your browser keeps your sign-in session, theme, a copy of today's dashboard (so the app opens instantly) and which workout sets you've ticked off. Signing out clears the dashboard copy.</p>
+
+        <h2>Deleting your data</h2>
+        <p>Open <strong>Settings → Delete my account</strong> in the app. This permanently deletes your profile, meals, workouts and check-ins.</p>
+
+        <h2>Health disclaimer</h2>
+        <p>Hardgainer gives general fitness and nutrition guidance. It is <strong>not medical advice</strong>, and calorie estimates from photos can be wrong. Talk to a doctor before starting if you have a medical condition, an injury, or a history of disordered eating, or if you are pregnant. Stop any exercise that causes pain.</p>
+        <p>If you are under 18, use Hardgainer only with a parent's or guardian's permission.</p>
+
+        <h2>Terms of use</h2>
+        <ul>
+          <li>Use the app for your own training and nutrition, and don't try to disrupt it or access other people's data.</li>
+          <li>AI features have daily limits so the service stays available for everyone.</li>
+          <li>The app is provided as is, without guarantees. Features may change, and accounts that abuse the service may be removed.</li>
+        </ul>
+      </article>
+    </main>
+  </body>
+</html>

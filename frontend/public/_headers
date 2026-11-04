@@ -1,0 +1,25 @@
+# Vite puts a content hash in every file name under /assets, so these can be cached forever.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Exercise photos rarely change; cache for a week, then revalidate.
+/exercises/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+# The page itself must always be fresh so new deploys show up.
+/
+  Cache-Control: no-cache
+/index.html
+  Cache-Control: no-cache
+
+# Security headers for every page and file.
+# If you edit the inline <script> in index.html, update its sha256 below (see README) or the theme won't load.
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-mdTGIZxx6q8cDF2Pyct8nKJ07azMq5bC44fajAZwMLk='; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; font-src 'self'; connect-src 'self' https://*.supabase.co; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), payment=(), usb=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains

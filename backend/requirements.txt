@@ -1,0 +1,10 @@
+fastapi>=0.115
+uvicorn[standard]>=0.32
+sqlalchemy>=2.0.36
+pydantic>=2.9
+pydantic-settings>=2.6
+google-genai>=1.20
+PyJWT[crypto]>=2.10
+python-multipart>=0.0.18
+# Uncomment when pointing DATABASE_URL at Supabase Postgres:
+# psycopg[binary]>=3.2

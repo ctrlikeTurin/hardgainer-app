@@ -1,0 +1,35 @@
+﻿{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "hardgainer",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-11-03",
+  // Run the API next to the D1 database (Western Europe) instead of at the edge: measured ~40 ms per query instead of
+  // ~155 ms from Johannesburg. Smart placement never moved this low-traffic Worker, so the region is pinned.
+  // Check with GET /api/health?db=1.
+  "placement": { "mode": "targeted", "region": "aws:eu-west-2" },
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "hardgainer",
+      "database_id": "6d580301-5818-46f9-b728-128e4d7e6723",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "vars": {
+    "VISION_MODELS": "gemini-3.5-flash,gemini-3.5-flash-lite,gemini-3.1-flash-lite",
+    "TEXT_MODELS": "gemini-3.5-flash-lite,gemini-3.1-flash-lite,gemini-3.5-flash",
+    "AI_GATEWAY_URL": "",
+    "CHECKIN_MIN_DAYS": "6",
+    "FOOD_SCANS_PER_MINUTE": "5",
+    "FOOD_AI_PER_DAY": "40"
+  }
+  // Secrets (wrangler secret put): GEMINI_API_KEY, SUPABASE_URL, optional SUPABASE_JWT_SECRET (local tests only),
+  // optional SUPABASE_SERVICE_ROLE_KEY (lets "Delete my account" also remove the login)
+}
